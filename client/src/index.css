@@ -1,0 +1,107 @@
+@import "tailwindcss";
+@import "leaflet/dist/leaflet.css";
+
+/* Leaflet specific styles to ensure map displays correctly */
+.leaflet-container {
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.leaflet-control-container .leaflet-routing-container-hide {
+  display: none;
+}
+
+/* Make sure marker icons appear */
+.leaflet-marker-icon {
+  display: block !important;
+}
+
+@theme {
+  /* Main Colors */
+  --color-bg-light: #f0f9ff; /* very light blue background */
+  --color-bg-light-hover: #e0f2fe; /* light blue hover */
+  --color-primary: #0ea5e9; /* sky blue */
+  --color-primary-hover: #0284c7; /* darker sky blue */
+  --color-secondary: #7dd3fc; /* light sky blue */
+  --color-secondary-hover: #38bdf8; /* medium sky blue */
+
+  /* Text Colors */
+  --color-txt-primary: #0f172a; /* dark slate blue */
+  --color-txt-secondary: #334155; /* slate gray */
+  --color-txt-tertiary: #64748b; /* medium gray-blue */
+  --color-txt-light: #f8fafc; /* off-white */
+
+  /* Accent Colors */
+  --color-accent: #06b6d4; /* cyan accent */
+  --color-accent-hover: #0891b2; /* darker cyan */
+  --color-success: #10b981; /* emerald green */
+  --color-warning: #f59e0b; /* amber */
+  --color-error: #ef4444; /* red */
+
+  /* Form Colors */
+  --color-form-input: #f8fafc; /* very light gray-blue */
+  --color-form-inputBorder: #e2e8f0; /* light gray */
+  --color-form-focus: rgba(14, 165, 233, 0.2); /* light sky blue */
+
+  /* Border Colors */
+  --color-border: #e2e8f0; /* light gray */
+  --color-border-focus: #7dd3fc; /* light sky blue */
+
+  /* Shadow Variables */
+  --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.04);
+  --shadow-md: 0 4px 6px -1px rgba(15, 23, 42, 0.05),
+    0 2px 4px -2px rgba(15, 23, 42, 0.03);
+  --shadow-lg: 0 10px 15px -3px rgba(15, 23, 42, 0.05),
+    0 4px 6px -4px rgba(15, 23, 42, 0.03);
+  --shadow-navbar: 0 2px 8px rgba(15, 23, 42, 0.07);
+  --shadow-card: 0 4px 8px rgba(15, 23, 42, 0.05);
+  --shadow-input-focus: 0 0 0 3px var(--color-form-focus);
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  color: var(--color-txt-primary);
+  background-color: var(--color-bg-light);
+}
+
+/* Utility to hide scrollbars */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.hide-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+/* Custom DatePicker Styles */
+.react-datepicker {
+  font-family: "Inter", sans-serif;
+  border-color: var(--color-border);
+  border-radius: 0.5rem; /* rounded-lg */
+}
+
+.react-datepicker__header {
+  background-color: var(--color-bg-light-hover);
+  border-bottom-color: var(--color-border);
+}
+
+.react-datepicker__current-month,
+.react-datepicker__day-name {
+  color: var(--color-primary);
+  font-weight: 600; /* font-semibold */
+}
+
+.react-datepicker__day--selected,
+.react-datepicker__day--keyboard-selected {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+.react-datepicker__day:hover {
+  background-color: var(--color-bg-light-hover);
+}
+
+.react-datepicker__navigation-icon::before {
+  border-color: var(--color-primary);
+}
